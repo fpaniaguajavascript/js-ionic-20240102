@@ -21,6 +21,9 @@ console.log(fichero.slice(-3,))//jpg --> Funcionará siempre que la extensión t
 let mascotas = ['perrito.jpg','gatito.avi','loro.mp3', 'galápago.docx', 'gallo.jpg'];
 //Obtener una lista con los nombres de las mascotas que tienen la extensión jpg
 //La nueva lista no debe tener la extensión, solo los nombres.
-//Los nombres deben estar en mayúsuclas
+//Los nombres deben estar en mayúsculas.
 //Utilizar slice, map y filter.
+
+
+
 
