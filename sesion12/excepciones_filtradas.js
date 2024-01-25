@@ -33,7 +33,6 @@ try {
         console.error("Error desconocido:" + e.message);
     }  
 } 
-
 /*
 Hacer una función que guarde en un fichero la dirección de email
 y la constraseña de un usuario. Si la dirección de email no contiene @ 
