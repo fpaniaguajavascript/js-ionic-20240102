@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de rango</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <label for="valor">Valor:</label>
+        <input type="range" name="valor" id="valor" min="0" max="3" value="1" step="1">
+    </div>
+    <div id="panel">
+
+    </div>
+    <!-- Programar una acción relacionada con el value del rango según se va desplazando-->
+</body>
+
+</html>
+<script src="colores.js"></script>
+<script>
+    let selector = document.querySelector("#valor");
+    selector.setAttribute("max",coloresCSS.length-1);
+    selector.addEventListener("input",()=>{
+        let valor = selector.value;
+        let color = coloresCSS[valor];
+        document.querySelector("#panel").style.backgroundColor = color;
+    });
+</script>

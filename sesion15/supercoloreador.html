@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de rango</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <label for="r">Rojo:</label>
+        <input type="range" name="r" id="r" min="0" max="255" value="0" step="1">
+        <label for="r">Verde:</label>
+        <input type="range" name="g" id="g" min="0" max="255" value="0" step="1">
+        <label for="r">Azul:</label>
+        <input type="range" name="b" id="b" min="0" max="255" value="0" step="1">
+    </div>
+    <div id="panel">
+
+    </div>
+    <!-- Programar una acción relacionada con el value del rango según se va desplazando-->
+</body>
+
+</html>
+<script>
+    var r = 0;
+    var g = 0;
+    var b = 0;
+    let bgColor;
+    document.querySelector("#panel").style.backgroundColor = bgColor;
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach(input => {
+        input.addEventListener("input", (evento) => {
+            if (evento.target.id === "r") {
+                r = evento.target.value;
+            } else if (evento.target.id === 'g') {
+                g = evento.target.value;
+            } else if (evento.target.id === 'b') {
+                b = evento.target.value;
+            }
+            bgColor = `rgb(${r},${g},${b})`;
+            document.querySelector("#panel").style.backgroundColor = bgColor;
+        });
+    });
+</script>
