@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="daigual.php" method="get">
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+        <input type="submit" id="enviar" value="Validar">
+    </form>
+    <span id="msgError"></span>
+</body>
+
+</html>
+<script>
+    document.querySelector("#enviar").onclick = (e) => {
+        e.preventDefault();
+        realizarValidacion();
+    }
+    function getTextFromURL(url) {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function () {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                passwordsProhibidas = JSON.parse(xmlHttp.responseText);
+                console.log(passwordsProhibidas);
+                return passwordsProhibidas;
+            }
+        }
+        xmlHttp.open("GET", url, true);
+        xmlHttp.send();
+    }
+    function realizarValidacion() {
+        let password = document.querySelector("#password").value;
+
+        if (passwordsProhibidas.some((pwd) => pwd === password)) {
+            console.error("Password prohibida (Opción SOME)");
+            mostrarError("Password prohibida (Opción SOME)")
+        } else {
+            console.warn("Password correcta (Opción SOME)");
+            mostrarError("Password correcta (Opción SOME)")
+        }
+
+        // if (password in passwordsProhibidas){
+        //     console.error("Password prohibida (Opción IN)");
+        // } else {
+        //      console.warn("Password correcta (Opción IN)");
+        // }
+
+        // if (passwordsProhibidas.includes(password)){
+        //     console.error("Password prohibida (Opción INCLUDES)");
+        // } else {
+        //      console.warn("Password correcta (Opción INCLUDES)");
+        // }
+
+        // for (var i=0;i<passwordsProhibidas.length;i++){
+        //     if (password===passwordsProhibidas[i]) break;
+        // }
+        // if (i===passwordsProhibidas.length){
+        //     console.error("Password correcto (Opción RETRO-80s)");
+        // } else {
+        //     console.warn("Password prohibida (Opción RETRO-80s)");
+        // }
+        validarFormulario();
+    }
+    function validarFormulario() {
+        if (document.forms[0].checkValidity()){
+            console.warn("Formulario validado");
+            //TODO Hacer el commit del formulario
+        } else {
+            console.warn("Formulario tiene errores");
+            var elementosFormulario = document.forms[0].elements;
+            for (elementoFormulario of elementosFormulario){
+                if (!elementoFormulario.checkValidity()){
+                     console.error(elementoFormulario.validationMessage);
+                     //TODO Hacer la gestión del error
+                }
+            }
+        }
+
+    }
+    function mostrarError(mensaje) {
+        document.querySelector("#msgError").innerHTML = mensaje;
+    }
+
+    const URL = "http://127.0.0.1:5500/ejercicio_password/passwords.json";
+    var passwordsProhibidas = getTextFromURL(URL);
+
+</script>

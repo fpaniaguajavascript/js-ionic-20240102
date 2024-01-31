@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <form action="loquesea.php" method="get">
+        <input type="text" name="nombre" required placeholder="Nombre">
+        <input type="submit" id="bEnviar" value="Enviar">
+    </form>
+</body>
+</html>
+<script>
+    document.querySelector("#bEnviar").addEventListener("click",(e)=>{
+        e.preventDefault();
+        console.log("Click en submit");
+        //El atributo forms de document tiene todos los formularios del dom
+        //El atributo elements de cada form tiene todos los campos del formulario
+        //document.forms[0].submit();//Invocación explícita al submit de un formulario
+        let elementos = document.forms[0].elements;//Lista de elementos del form
+        for (let i=0;i<elementos.length;i++){
+            console.log(elementos[i].value);
+            console.log(elementos[i].checkValidity());
+        }
+    })
+</script>
