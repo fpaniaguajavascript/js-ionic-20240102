@@ -1,0 +1,34 @@
+body {
+    margin: 0px;
+}
+#menu {
+    position: fixed;
+    top:5vh;
+    left:-70%;
+    width: 80%;
+    height: 90vh;
+    background-color: aqua;
+    transition: all 1s;
+}
+.pantalla {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top:0px;
+}
+#screen1 {
+    background-color: blue;
+    
+}
+
+#screen2 {
+    background-color: orange;
+}
+
+#screen3 {
+    background-color: green;
+}
+
+#screen4 {
+    background-color: gray;
+}
