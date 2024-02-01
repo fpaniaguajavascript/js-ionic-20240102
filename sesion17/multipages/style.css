@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
 body {
     margin: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 #menu {
     position: fixed;
-    top:5vh;
-    left:-70%;
-    width: 80%;
-    height: 90vh;
-    background-color: aqua;
+    top:0vh;
+    left:-65%;
+    width: 70%;
+    height: 100vh;
+    background-color: gainsboro;
     transition: all 1s;
 }
 .pantalla {
@@ -16,9 +19,19 @@ body {
     position: fixed;
     top:0px;
 }
+#portada {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top:0px;
+    background-color: white;
+    text-align: center;
+}
+#portada img {
+    transform: translateY(25%);
+}
 #screen1 {
     background-color: blue;
-    
 }
 
 #screen2 {
@@ -31,4 +44,29 @@ body {
 
 #screen4 {
     background-color: gray;
+}
+
+#menu-opciones {
+    list-style-type : none;
+}
+
+#menu-opciones li {
+    padding:0.5em;
+    clear: both;
+}
+
+#menu-opciones div {
+    float: left;
+}
+
+.opcion {
+    width: 50%;
+}
+
+#temporizador {
+    width: 100%;
+    position: absolute;
+    bottom: 2em;
+    text-align: center;
+    font-size: 7em;
 }
