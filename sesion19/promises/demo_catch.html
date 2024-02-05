@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function getPromise() {
+        const promise1 = new Promise((resolve, reject) => {
+            resolve(new Promise((resolve2, reject2) => {
+                //resolve("Resultado");
+                reject("Error promise interno");
+            }));
+        });
+        return promise1;
+    }
+    getPromise()
+    .then()
+    .then((resultado2)=>{
+        console.log(resultado2);
+    })
+    .catch((error)=>{//Este catch podría capturar los reject de la promise externa e interna
+        console.error(error);
+    });
+    
+</script>
