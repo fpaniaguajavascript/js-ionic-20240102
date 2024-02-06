@@ -1,0 +1,17 @@
+CREAR EN TS UNA CLASE ALUMNO CON:
+Constructor:
+- Nombre
+- email
+- telefono (opcional)
+- direccion postal (es una interface con 
+calle, numero y localidad)
+- fechaNacimiento (privado)
+
+Get y Set de la fecha de fechaNacimiento
+que provoque una exception si es menor de edad
+
+Métodos:
+- calcularCoeficiente. Recibe un número
+y devuelve un número. Método público.
+- obtenerEficiencia. No recibe ningún argumento
+y devuelve un string. Método privado.
