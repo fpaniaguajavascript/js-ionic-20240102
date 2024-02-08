@@ -4,10 +4,13 @@ npm install -g @angular/cli
 Ver versión:
 ng version
 
-Creación proyecto:
+Creación proyecto (En linux/unix utilizar sudo si es necesario):
 ng new nombre_proyecto
 
-Arranque del servidor:
+Cambio de owner de la carpeta (En linux/unix si es necesario):
+sudo chown -R tardes:staff nombre_proyecto
+
+Arranque del servidor (desde la carpeta del proyecto):
 ng serve
 ng serve -o (abre el browser)
 ng serve --port puerto (en el puerto indicado)
@@ -22,6 +25,11 @@ Cada componente tiene:
 - Fichero css (scss), con el estilo
 - Fichero html, con la estructura del componente
 
+Agregar evento a un componente:
+Ejemplo:
+<button (click)="agregarPelicula()">Agregar</button>
+El método agregarPelicula() debe estar en el TS del componente
+
 Víncular campos input con atributos del componente:
 En el input: [(ngModel)]=nombre_atributo
 En el fichero ts:
@@ -30,6 +38,10 @@ nombre:string="";//Declaración de atributos
 
 Interpolar atributo del ts (muestra en el html el valor del atributo):
 {{nombre_atributo}}
+
+Interpolación y uso del pipe json (obtenemos la respresentación json de un objeto):
+1. Import import { CommonModule } from '@angular/common';
+2. {{ nombre_objeto | json}}
 
 Interfaces:
 Paso 1: Crear interface. ng generate interface nombre_interface
