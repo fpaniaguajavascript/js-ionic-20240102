@@ -1,0 +1,43 @@
+Instalación (hay que tener instalado node):
+npm install -g @angular/cli
+
+Ver versión:
+ng version
+
+Creación proyecto:
+ng new nombre_proyecto
+
+Arranque del servidor:
+ng serve
+ng serve -o (abre el browser)
+ng serve --port puerto (en el puerto indicado)
+
+Creación de componentes:
+ng generate component nombre_compontente
+ng g c nombre_compontente
+ng generate component nombre_componente --skip-tests (evita la creación de los ficheros de test)
+
+Cada componente tiene:
+- Fichero ts, con el código (importante el selector y el nombre de la clase)
+- Fichero css (scss), con el estilo
+- Fichero html, con la estructura del componente
+
+Víncular campos input con atributos del componente:
+En el input: [(ngModel)]=nombre_atributo
+En el fichero ts:
+import { FormsModule } from '@angular/forms';
+nombre:string="";//Declaración de atributos
+
+Interpolar atributo del ts (muestra en el html el valor del atributo):
+{{nombre_atributo}}
+
+Interfaces:
+Paso 1: Crear interface. ng generate interface nombre_interface
+
+Servicios:
+Paso 1: Crear servicio. 
+Paso 2: Programamos el servicio.
+Paso 3. Inyectar el servicio en el componente que lo use a través del constructor.
+    Ejemplo:constructor(private servicioTareas:TareasService)
+
+

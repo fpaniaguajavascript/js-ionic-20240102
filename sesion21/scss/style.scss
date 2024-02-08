@@ -1,0 +1,64 @@
+/*
+Comentarios de bloque
+Comentarios de bloque, línea 2
+*/
+
+//Comentario de línea
+
+@import "colores";
+
+//Variable
+$alto : 100px;
+
+//Operadores aritméticos
+#div-principal {
+    background-color: $color-principal;
+    color:$color-texto;
+    height: $alto * 2;
+}
+
+//Anidamiento
+#div-secundario {
+    p {
+        font-size: 3em;
+    }
+    #t1 {
+        font-size: 4em;
+    }
+}
+
+//@mixin + @include
+@mixin tarjeta($ancho, $alto, $color){
+    width: $ancho;
+    height: $alto;
+    background-color: $color;
+    border: 1px;
+    box-shadow: 5px 5px 3px gray;
+}
+
+#peli1 {
+    @include tarjeta(100px,50px,green);
+}
+
+#peli2 {
+    @include tarjeta(200px,50px,orange);
+}
+
+%caja-aguamarina {
+    width: 20%;
+    height: 100px;
+    background-color: aquamarine;
+}
+
+%sombra {
+    box-shadow: 5px 5px 3px gray;
+}
+.negrita {
+    font-weight: bolder;
+}
+
+.caja-guay {
+    @extend %caja-aguamarina;
+    @extend %sombra;
+    @extend .negrita;
+}

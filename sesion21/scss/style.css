@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/*
+Comentarios de bloque
+Comentarios de bloque, línea 2
+*/
+#div-principal {
+  background-color: rgb(212, 212, 248);
+  color: #1111AA;
+  height: 200px;
+}
+
+#div-secundario p {
+  font-size: 3em;
+}
+#div-secundario #t1 {
+  font-size: 4em;
+}
+
+#peli1 {
+  width: 100px;
+  height: 50px;
+  background-color: green;
+  border: 1px;
+  box-shadow: 5px 5px 3px gray;
+}
+
+#peli2 {
+  width: 200px;
+  height: 50px;
+  background-color: orange;
+  border: 1px;
+  box-shadow: 5px 5px 3px gray;
+}
+
+.caja-guay {
+  width: 20%;
+  height: 100px;
+  background-color: aquamarine;
+}
+
+.caja-guay {
+  box-shadow: 5px 5px 3px gray;
+}
+
+.negrita, .caja-guay {
+  font-weight: bolder;
+}
+
+/*# sourceMappingURL=style.css.map */
