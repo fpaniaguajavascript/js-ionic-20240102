@@ -62,3 +62,68 @@ import { Component, Input } from '@angular/core';
 
 2. Los atributos del componente en el que se inyectan los datos se marcan con @Input()
 @Input() pelicula:Pelicula={}
+
+**********
+Routing
+**********
+Paso 1: Modificar app.routes.ts y agregar todas las rutas de la aplicación. Ejemplo:
+export const routes: Routes = [
+    {path:'editar',component:FichaPeliComponent},
+    {path:'', component:PrincipalComponent},//Raiz
+    {path:'**',component:Page404Component}//Cualquier petición no gestionada antes acaba aquí
+];
+
+Navegación declarativa:
+**********************
+(En el TS)
+import { RouterModule } from '@angular/router';
+
+imports: [ RouterModule ]
+
+(En el HTML, 2 notaciones a elegir)
+    <div><a [routerLink]="['/editar']">Link</a></div>
+    <div><a routerLink="/editar">Link 2</a></div>
+
+Navegación programática:
+***********************
+(En el TS)
+import { Router } from '@angular/router';
+
+Inyectamos el objeto Router en el constructor:
+constructor(private router:Router){
+    
+}
+
+(2 notaciones a elegir)
+//this.router.navigate(['']);
+this.router.navigateByUrl('/');
+
+**********
+Routing con parámetros
+**********
+Paso 1: Modificar app.routes.ts y agregar todas las rutas de la aplicación indicando los parámetros. Ejemplo:
+{path:'editar/:titulo',component:FichaPeliComponent},
+
+Paso 2: Inyectar en el componente que recibe el parámetro el objeto ActivatedRoutes:
+constructor(private ar:ActivatedRoute){
+}
+
+Paso 3: Suscribirse a la recepción de los parámetros en el método ngOnInit:
+  ngOnInit():void {
+    this.ar.params.subscribe(params=>{
+      this.titulo = params['titulo'];
+      console.log(this.titulo);
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
