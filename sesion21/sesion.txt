@@ -1,0 +1,3 @@
+En esta sesión se estuvo trabajando en los proyectos:
+gestor-tareas
+super-pelis

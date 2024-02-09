@@ -52,4 +52,13 @@ Paso 2: Programamos el servicio.
 Paso 3. Inyectar el servicio en el componente que lo use a través del constructor.
     Ejemplo:constructor(private servicioTareas:TareasService)
 
+*ngFor
+Paso 1: Importar el módulo CommonModules: import { CommonModule } from '@angular/common';
+Paso 2: En el HTML, incluir el código: <app-fila-peli *ngFor="let pelicula of listaPeliculas"></app-fila-peli>
 
+Injección de datos en un componente:
+1. En el componente en el que se inyectan los datos, agregar el módulo Input
+import { Component, Input } from '@angular/core';
+
+2. Los atributos del componente en el que se inyectan los datos se marcan con @Input()
+@Input() pelicula:Pelicula={}
