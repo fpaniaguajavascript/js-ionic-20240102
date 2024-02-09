@@ -117,6 +117,14 @@ Paso 3: Suscribirse a la recepción de los parámetros en el método ngOnInit:
   }
 
 
+**************
+Generación de distribución para web
+**************
+ng build --base-href=.
+
+Esto genera una carpeta dist en el proyecto donde se encuentra el html, css y js.
+
+
 
 
 
