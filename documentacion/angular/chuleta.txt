@@ -124,6 +124,32 @@ ng build --base-href=.
 
 Esto genera una carpeta dist en el proyecto donde se encuentra el html, css y js.
 
+***************
+Peticiones web (standalone)
+***************
+Agregar el httpprovider en el fichero app.config.ts
+
+import { provideHttpClient } from '@angular/common/http';
+
+export const appConfig: ApplicationConfig = {
+  providers: [provideRouter(routes), provideHttpClient()]
+};
+
+//Ejemplo service
+export class ConectorwebService {
+  static URL = "https://fpaniaguajavascript.github.io/movies/movies-1900s.json";
+  constructor(private clienteHttp:HttpClient) { }
+  getMovies() {
+    return this.clienteHttp?.get<any>(ConectorwebService.URL);//Devuelve un Observable
+  }
+}
+
+//Ejemplo componente consumidor servicio
+this.cws.getMovies()?.subscribe((resultado) => {
+      console.log(resultado);
+})
+
+
 
 
 
