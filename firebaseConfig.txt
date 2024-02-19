@@ -1,0 +1,9 @@
+const firebaseConfig = {
+  apiKey: "AIzaSyB2DfH2B9-DZse4n6RwhOwFRvMczFRhr60",
+  authDomain: "comunicador-8a501.firebaseapp.com",
+  projectId: "comunicador-8a501",
+  storageBucket: "comunicador-8a501.appspot.com",
+  messagingSenderId: "191096285178",
+  appId: "1:191096285178:web:03d7c6168204ac4feae643",
+  databaseURL: "https://comunicador-8a501-default-rtdb.europe-west1.firebasedatabase.app/"
+}
